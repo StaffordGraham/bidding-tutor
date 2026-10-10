@@ -1,0 +1,253 @@
+/* ==========================================================================
+   Bidding Tutor – styles.css
+   Mobile-first (iPhone portrait). Wider screens only centre the column.
+   ========================================================================== */
+
+/* ---------- Design tokens ---------- */
+:root {
+  /* Interface colours */
+  --ink: #23272b;
+  --ink-soft: #5b636b;
+  --paper: #e9ecef;
+  --card: #ffffff;
+  --line: #d3d8dd;
+  --brass: #b08a3e;
+  --brass-soft: #f3e9d2;
+  --good: #1f6b3a;
+  --good-soft: #dff0e4;
+  --bad: #a3242a;
+  --bad-soft: #f8e1e2;
+
+  /* Suit colours (fixed by the lesson spec) */
+  --suit-S: #14246e; /* spades: dark blue */
+  --suit-H: #c62828; /* hearts: red */
+  --suit-D: #2e7d32; /* diamonds: green */
+  --suit-C: #000000; /* clubs: black */
+
+  --radius: 12px;
+  --tap: 44px;
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.45;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Keep content clear of the notch and home indicator */
+#app {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: calc(env(safe-area-inset-top, 0px) + 0.75rem) 1rem calc(env(safe-area-inset-bottom, 0px) + 1.5rem);
+}
+
+h1, h2, h3, p { margin: 0; }
+
+a { color: inherit; }
+
+:focus-visible { outline: 3px solid var(--brass); outline-offset: 2px; }
+
+/* ---------- Suit colours ---------- */
+.suit-S { color: var(--suit-S); }
+.suit-H { color: var(--suit-H); }
+.suit-D { color: var(--suit-D); }
+.suit-C { color: var(--suit-C); }
+
+/* ---------- Header ---------- */
+.app-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: var(--tap);
+  margin-bottom: 0.5rem;
+}
+.app-header .header-title { font-weight: 700; text-align: center; }
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--line);
+}
+.card-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  padding: 0.6rem 1rem;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn.secondary { background: var(--card); color: var(--ink); border: 2px solid var(--ink); }
+.btn.danger { background: var(--card); color: var(--bad); border: 2px solid var(--bad); }
+.btn[disabled] { opacity: 0.4; cursor: not-allowed; }
+.btn-stack { display: grid; gap: 0.6rem; margin-top: 1rem; }
+
+/* ---------- Home ---------- */
+.home { text-align: center; padding-top: 12vh; }
+.home-suits { font-size: 2rem; letter-spacing: 0.4rem; margin-bottom: 0.5rem; }
+.home h1 { font-family: var(--font-display); font-size: 2.6rem; line-height: 1.1; }
+.home .tagline { color: var(--ink-soft); margin: 0.6rem 0 2rem; }
+.hint { text-align: left; background: var(--brass-soft); border-color: var(--brass); margin-top: 1.5rem; font-size: 0.92rem; }
+.hint button { margin-top: 0.5rem; background: none; border: 0; font: inherit; font-weight: 700; text-decoration: underline; padding: 0.5rem 0; cursor: pointer; }
+
+/* ---------- Level cards and lesson list ---------- */
+.page-title { font-family: var(--font-display); font-size: 1.7rem; margin: 0.25rem 0 0.75rem; }
+.level-card { display: block; text-decoration: none; }
+.level-card .level-num { font-size: 0.85rem; font-weight: 700; color: var(--brass); }
+.level-card .level-name { font-family: var(--font-display); font-size: 1.35rem; margin: 0.1rem 0; }
+.level-card .level-desc { color: var(--ink-soft); font-size: 0.95rem; }
+.level-card .level-progress { margin-top: 0.5rem; font-size: 0.85rem; font-weight: 600; }
+
+.lesson-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  min-height: var(--tap);
+}
+.lesson-link .lesson-name { font-weight: 600; }
+.chip {
+  flex: none;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink-soft);
+}
+.chip.done { background: var(--good-soft); color: var(--good); }
+.chip.failed { background: var(--bad-soft); color: var(--bad); }
+.chip.concept { background: var(--brass-soft); color: #6b5222; }
+
+/* ---------- Lesson screen ---------- */
+.lesson-title { font-family: var(--font-display); font-size: 1.35rem; line-height: 1.2; }
+.objective { margin-top: 0.35rem; font-size: 0.95rem; }
+.meta { margin-top: 0.35rem; color: var(--ink-soft); font-size: 0.85rem; }
+
+/* Hand display: one suit per line, highest card on the left */
+.hand { font-size: 1.45rem; font-weight: 700; line-height: 1.55; letter-spacing: 0.04em; }
+.hand-row { display: flex; gap: 0.6rem; }
+.hand-symbol { width: 1.3em; text-align: center; }
+.hand-label { font-size: 0.85rem; font-weight: 700; color: var(--ink-soft); letter-spacing: 0; margin-bottom: 0.2rem; }
+
+/* Auction grid */
+.auction { width: 100%; border-collapse: collapse; text-align: center; table-layout: fixed; }
+.auction th { font-size: 0.8rem; font-weight: 700; color: var(--ink-soft); padding: 0 0 0.35rem; }
+.auction td { height: 2.2rem; font-size: 1.1rem; font-weight: 700; border-top: 1px solid var(--line); }
+.auction td.waiting { color: var(--brass); }
+.auction td.mark { background: var(--bad-soft); border-radius: 6px; }
+.auction-holder { min-height: 3.5rem; }
+.turn-line { margin-top: 0.5rem; font-size: 0.88rem; color: var(--ink-soft); min-height: 1.3em; }
+
+/* Bidding box */
+.bidding-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.6rem; }
+.bidding-box.disabled { opacity: 0.55; }
+.bid-special { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem; margin-bottom: 0.4rem; }
+.bid-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.3rem; }
+.bid-btn {
+  min-height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f7f8f9;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+}
+.bid-btn.special { min-height: var(--tap); font-size: 0.95rem; }
+.bid-btn.selected { border: 2px solid var(--brass); background: var(--brass-soft); }
+.bid-btn[disabled] { cursor: not-allowed; }
+.bid-confirm { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 0.6rem; margin-top: 0.6rem; }
+.bid-readout { font-weight: 600; }
+.bid-confirm .btn { width: auto; min-height: var(--tap); font-size: 1rem; padding: 0.4rem 1.2rem; }
+
+/* ---------- Explanation screen ---------- */
+.banner { border-radius: var(--radius); padding: 0.9rem 1rem; margin-bottom: 0.75rem; }
+.banner h1 { font-family: var(--font-display); font-size: 1.5rem; }
+.banner p { margin-top: 0.2rem; }
+.banner.pass { background: var(--good-soft); color: var(--good); }
+.banner.fail { background: var(--bad-soft); color: var(--bad); }
+
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
+.compare .card { margin: 0; }
+.compare .big-call { font-size: 1.8rem; font-weight: 700; margin-top: 0.1rem; }
+
+.hands-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
+.hands-grid .card { margin: 0; padding: 0.7rem 0.8rem; }
+.hands-grid .hand { font-size: 1.15rem; }
+
+.why-item + .why-item { margin-top: 0.9rem; padding-top: 0.9rem; border-top: 1px solid var(--line); }
+.why-head { font-weight: 700; }
+.why-body { margin-top: 0.2rem; }
+.why-mistake { margin-top: 0.4rem; color: var(--bad); font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.3rem; }
+.rule-list { margin: 0; padding-left: 1.1rem; }
+.rule-list li + li { margin-top: 0.4rem; }
+.contract-line { margin-top: 0.5rem; font-weight: 600; }
+
+/* ---------- Progress ---------- */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-bottom: 0.75rem; }
+.stat { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.7rem 0.4rem; text-align: center; }
+.stat .num { font-family: var(--font-display); font-size: 1.9rem; line-height: 1; }
+.stat .lbl { font-size: 0.8rem; color: var(--ink-soft); margin-top: 0.25rem; }
+.progress-row { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; padding: 0.45rem 0; }
+.progress-row + .progress-row { border-top: 1px solid var(--line); }
+.progress-row .detail { font-size: 0.8rem; color: var(--ink-soft); }
+
+/* ---------- Toast ---------- */
+#toast-area { position: fixed; left: 0; right: 0; bottom: calc(env(safe-area-inset-bottom, 0px) + 0.75rem); display: flex; justify-content: center; pointer-events: none; z-index: 10; }
+.toast { pointer-events: auto; display: flex; align-items: center; gap: 0.75rem; background: var(--ink); color: #fff; padding: 0.6rem 0.9rem; border-radius: 999px; font-size: 0.92rem; }
+.toast button { background: none; border: 0; color: #f3e9d2; font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer; padding: 0.3rem; }
+
+.error-box { text-align: center; padding-top: 4rem; }
+.error-box p { margin: 0.6rem 0 1.2rem; color: var(--ink-soft); }
+
+/* ---------- Larger screens: just give the bidding box more room ---------- */
+@media (min-width: 480px) {
+  .bid-btn { min-height: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

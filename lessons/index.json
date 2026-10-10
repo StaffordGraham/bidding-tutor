@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "levels": [
+    {
+      "level": 1,
+      "title": "Opening Bids and Rebids",
+      "description": "You are the opener. Open the bidding, then make your rebid.",
+      "lessons": [
+        {
+          "id": "L1-001-open-1nt-5card-major",
+          "title": "Open 1NT with a 5-card major",
+          "path": "lessons/level1/L1-001-open-1nt-5card-major.json"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "title": "Responses",
+      "description": "Partner opens. You respond, then make your rebid.",
+      "lessons": [
+        {
+          "id": "L2-001-stayman-invite",
+          "title": "Stayman, then invite",
+          "path": "lessons/level2/L2-001-stayman-invite.json"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "title": "Complete Auctions",
+      "description": "Bid with partner all the way to the final contract.",
+      "lessons": [
+        {
+          "id": "L3-001-transfer-to-game",
+          "title": "Transfer to game",
+          "path": "lessons/level3/L3-001-transfer-to-game.json"
+        }
+      ]
+    }
+  ]
+}

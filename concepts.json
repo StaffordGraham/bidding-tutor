@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "concepts": [
+    {
+      "id": "OPEN_1NT",
+      "title": "Opening 1NT",
+      "rule": "15–17 HCP and a balanced hand (no singleton or void, at most one doubleton). A 5-card major is allowed.",
+      "meaning": "{call} shows 15–17 HCP and a balanced hand.",
+      "reason": "{hand} has {hcp} HCP and a {shape} shape ({longest}), so 1NT describes it best.",
+      "mistake": "{wrongCall} does not describe a balanced {hcp}-point hand as well as 1NT does. With 15–17 HCP and a balanced shape, open 1NT."
+    },
+    {
+      "id": "STAYMAN",
+      "title": "Stayman",
+      "rule": "After a 1NT opening, 2♣ asks opener for a 4-card major. Responder needs at least 8 HCP and a 4-card major.",
+      "meaning": "{call} asks partner whether they hold a 4-card major.",
+      "reason": "{hand} has {hcp} HCP and a {shape} shape ({longest}), enough to look for a major-suit fit.",
+      "mistake": "{wrongCall} does not ask partner about majors. With 8 or more HCP and a 4-card major, bid 2♣ (Stayman) to look for a fit."
+    },
+    {
+      "id": "STAYMAN_REPLY_MAJOR",
+      "title": "Answering Stayman with a major",
+      "rule": "Over Stayman, opener bids a major in which they hold four or more cards: 2♥ or 2♠. With no 4-card major, opener bids 2♦.",
+      "meaning": "{call} shows a major suit: {suit}.",
+      "reason": "{hand} has {longest}, so {call} shows it.",
+      "mistake": "{wrongCall} would deny a major, but you hold {longest}. Over Stayman, show your major."
+    },
+    {
+      "id": "STAYMAN_INVITE_RAISE",
+      "title": "Inviting game after Stayman",
+      "rule": "After opener shows a major you also hold, raise to the three level with about 8–9 HCP to invite game. Opener bids game with a maximum and passes with a minimum.",
+      "meaning": "{call} invites game with about 8–9 HCP and a fit in {suit}.",
+      "reason": "{hand} has {hcp} HCP and support for {suit}, enough to invite but not to bid game.",
+      "mistake": "{wrongCall} does not match your strength. With about 8–9 HCP and a fit, invite with a raise to the three level ({call})."
+    },
+    {
+      "id": "JACOBY_TRANSFER",
+      "title": "Jacoby transfer",
+      "rule": "After a 1NT opening, 2♦ asks opener to bid 2♥, and 2♥ asks opener to bid 2♠. The transfer shows five or more cards in the major and lets the 1NT opener play the hand.",
+      "meaning": "{call} asks partner to bid {suit}. It shows five or more cards in {suit}.",
+      "reason": "{hand} has {longest}, so a transfer is the right tool.",
+      "mistake": "{wrongCall} does not show a long {suit} suit. Use a transfer so the 1NT opener becomes declarer."
+    },
+    {
+      "id": "COMPLETE_TRANSFER",
+      "title": "Completing a transfer",
+      "rule": "When partner makes a transfer bid, bid the suit partner is showing, even with only two or three cards in it.",
+      "meaning": "{call} completes the transfer by bidding {suit}, as partner asked.",
+      "reason": "Partner asked you to bid {suit}. Completing the transfer is automatic.",
+      "mistake": "{wrongCall} ignores the transfer. Always complete it by bidding {suit}."
+    },
+    {
+      "id": "TRANSFER_GAME_RAISE",
+      "title": "Transfer, then game",
+      "rule": "After a transfer is completed, responder with 10 or more HCP and five cards in the major bids game in that major.",
+      "meaning": "{call} puts the partnership in game in {suit}.",
+      "reason": "{hand} has {hcp} HCP and {longest}. Opposite a 1NT opening of 15–17, that is enough for game.",
+      "mistake": "{wrongCall} stops short of game. With 10 or more HCP and a five-card major, bid game."
+    },
+    {
+      "id": "PASS_AT_GAME",
+      "title": "Passing in game",
+      "rule": "When the partnership has reached a game contract and has no reason to look for slam, pass.",
+      "meaning": "Pass ends the auction in the game contract.",
+      "reason": "The auction has reached game. {hand} has {hcp} HCP and nothing to suggest going higher.",
+      "mistake": "{wrongCall} bids beyond game, but nothing in your hand suggests slam. Pass."
+    },
+    {
+      "id": "INCORRECT_GENERIC",
+      "title": "Incorrect call",
+      "rule": "",
+      "meaning": "",
+      "reason": "",
+      "mistake": "You bid {wrongCall}, but the lesson expected {call}."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "L3-001-transfer-to-game",
+  "level": 3,
+  "title": "Transfer to game",
+  "objective": "Open 1NT, complete partner's Jacoby transfer, and pass once partner has bid game.",
+  "dealer": "S",
+  "vulnerability": "none",
+  "student": "S",
+  "hands": {
+    "S": {
+      "cards": { "S": "AQ4", "H": "A82", "D": "KJ75", "C": "Q93" },
+      "facts": { "hcp": 16, "shape": "3-3-4-3", "longest": "4 diamonds" }
+    },
+    "N": {
+      "cards": { "S": "93", "H": "KQJ94", "D": "862", "C": "A74" },
+      "facts": { "hcp": 10, "shape": "2-5-3-3", "longest": "5 hearts" }
+    }
+  },
+  "auction": [
+    { "seat": "S", "call": "1NT", "concepts": ["OPEN_1NT"] },
+    { "seat": "W", "call": "P", "concepts": [] },
+    { "seat": "N", "call": "2D", "concepts": ["JACOBY_TRANSFER"], "params": { "suit": "hearts" } },
+    { "seat": "E", "call": "P", "concepts": [] },
+    {
+      "seat": "S", "call": "2H", "concepts": ["COMPLETE_TRANSFER"], "params": { "suit": "hearts" },
+      "commonErrors": [{ "call": "P", "concept": "COMPLETE_TRANSFER" }]
+    },
+    { "seat": "W", "call": "P", "concepts": [] },
+    { "seat": "N", "call": "4H", "concepts": ["TRANSFER_GAME_RAISE"], "params": { "suit": "hearts" } },
+    { "seat": "E", "call": "P", "concepts": [] },
+    {
+      "seat": "S", "call": "P", "concepts": ["PASS_AT_GAME"],
+      "commonErrors": [{ "call": "4NT", "concept": "PASS_AT_GAME" }]
+    },
+    { "seat": "W", "call": "P", "concepts": [] }
+  ],
+  "outcome": { "auctionComplete": true, "contract": "4H", "declarer": "S" },
+  "concepts": ["OPEN_1NT", "JACOBY_TRANSFER", "COMPLETE_TRANSFER", "TRANSFER_GAME_RAISE", "PASS_AT_GAME"]
+}

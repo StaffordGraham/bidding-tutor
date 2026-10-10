@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bidding Tutor</title>
+
+  <!-- viewport-fit=cover lets the app use the full iPhone screen; safe-area insets are handled in CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Learn Standard American bridge bidding with a strong 1NT.">
+  <meta name="theme-color" content="#23272b">
+
+  <!-- Installable PWA / iPhone "Add to Home Screen" support -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Bidding Tutor">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Every screen is rendered into this element by app.js -->
+  <div id="app" aria-live="polite"></div>
+
+  <!-- Toast area used for "update available" and similar messages -->
+  <div id="toast-area"></div>
+
+  <noscript>Bidding Tutor needs JavaScript to run.</noscript>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

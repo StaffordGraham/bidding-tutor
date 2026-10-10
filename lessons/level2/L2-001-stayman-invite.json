@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "L2-001-stayman-invite",
+  "level": 2,
+  "title": "Stayman, then invite",
+  "objective": "Partner opens 1NT. With 9 HCP and both majors, ask with Stayman, then invite game when partner shows a heart fit.",
+  "dealer": "N",
+  "vulnerability": "none",
+  "student": "S",
+  "hands": {
+    "S": {
+      "cards": { "S": "KJ73", "H": "Q842", "D": "85", "C": "QJ6" },
+      "facts": { "hcp": 9, "shape": "4-4-2-3", "longest": "4 spades and 4 hearts" }
+    },
+    "N": {
+      "cards": { "S": "A54", "H": "AK93", "D": "KJ4", "C": "872" },
+      "facts": { "hcp": 15, "shape": "3-4-3-3", "longest": "4 hearts" }
+    }
+  },
+  "auction": [
+    { "seat": "N", "call": "1NT", "concepts": ["OPEN_1NT"] },
+    { "seat": "E", "call": "P", "concepts": [] },
+    {
+      "seat": "S", "call": "2C", "concepts": ["STAYMAN"],
+      "commonErrors": [{ "call": "2NT", "concept": "STAYMAN" }]
+    },
+    { "seat": "W", "call": "P", "concepts": [] },
+    { "seat": "N", "call": "2H", "concepts": ["STAYMAN_REPLY_MAJOR"], "params": { "suit": "hearts" } },
+    { "seat": "E", "call": "P", "concepts": [] },
+    {
+      "seat": "S", "call": "3H", "concepts": ["STAYMAN_INVITE_RAISE"], "params": { "suit": "hearts" },
+      "commonErrors": [{ "call": "4H", "concept": "STAYMAN_INVITE_RAISE" }]
+    }
+  ],
+  "epilogue": [
+    { "seat": "W", "call": "P" },
+    { "seat": "N", "call": "P" },
+    { "seat": "E", "call": "P" }
+  ],
+  "outcome": { "auctionComplete": true, "contract": "3H", "declarer": "N" },
+  "concepts": ["OPEN_1NT", "STAYMAN", "STAYMAN_REPLY_MAJOR", "STAYMAN_INVITE_RAISE"]
+}

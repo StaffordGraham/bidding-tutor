@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "L1-001-open-1nt-5card-major",
+  "level": 1,
+  "title": "Open 1NT with a 5-card major",
+  "objective": "Open 1NT with a balanced 17 HCP hand that has a 5-card major, then show your major when partner bids Stayman.",
+  "dealer": "S",
+  "vulnerability": "none",
+  "student": "S",
+  "hands": {
+    "S": {
+      "cards": {
+        "S": "AKJ73",
+        "H": "Q82",
+        "D": "A94",
+        "C": "K8"
+      },
+      "facts": {
+        "hcp": 17,
+        "shape": "5-3-3-2",
+        "longest": "5 spades"
+      }
+    },
+    "N": {
+      "cards": {
+        "S": "QT64",
+        "H": "K93",
+        "D": "Q85",
+        "C": "QJ4"
+      },
+      "facts": {
+        "hcp": 10,
+        "shape": "4-3-3-3",
+        "longest": "4 spades"
+      }
+    }
+  },
+  "auction": [
+    {
+      "seat": "S",
+      "call": "1NT",
+      "concepts": [
+        "OPEN_1NT"
+      ],
+      "commonErrors": [
+        {
+          "call": "1S",
+          "concept": "OPEN_1NT"
+        }
+      ]
+    },
+    {
+      "seat": "W",
+      "call": "P",
+      "concepts": []
+    },
+    {
+      "seat": "N",
+      "call": "2C",
+      "concepts": [
+        "STAYMAN"
+      ]
+    },
+    {
+      "seat": "E",
+      "call": "P",
+      "concepts": []
+    },
+    {
+      "seat": "S",
+      "call": "2S",
+      "concepts": [
+        "STAYMAN_REPLY_MAJOR"
+      ],
+      "params": {
+        "suit": "spades"
+      },
+      "commonErrors": [
+        {
+          "call": "2D",
+          "concept": "STAYMAN_REPLY_MAJOR"
+        }
+      ]
+    }
+  ],
+  "epilogue": [
+    {
+      "seat": "W",
+      "call": "P"
+    },
+    {
+      "seat": "N",
+      "call": "4S"
+    },
+    {
+      "seat": "E",
+      "call": "P"
+    },
+    {
+      "seat": "S",
+      "call": "P"
+    },
+    {
+      "seat": "W",
+      "call": "P"
+    }
+  ],
+  "outcome": {
+    "auctionComplete": true,
+    "contract": "4S",
+    "declarer": "S"
+  },
+  "concepts": [
+    "OPEN_1NT",
+    "STAYMAN",
+    "STAYMAN_REPLY_MAJOR"
+  ]
+}

@@ -9,6 +9,9 @@
   --ink: #23272b;
   --ink-soft: #5b636b;
   --paper: #e9ecef;
+  --felt: #1f5e3b; /* baize page background */
+  --on-felt: #f4f1e8; /* text sitting directly on the felt */
+  --on-felt-soft: #cfe0d4;
   --card: #ffffff;
   --line: #d3d8dd;
   --brass: #b08a3e;
@@ -36,7 +39,7 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: var(--paper);
+  background: var(--felt);
   color: var(--ink);
   font-family: var(--font-ui);
   font-size: 1rem;
@@ -73,13 +76,13 @@ a { color: inherit; }
   min-height: var(--tap);
   margin-bottom: 0.5rem;
 }
-.app-header .header-title { font-weight: 700; text-align: center; }
+.app-header .header-title { font-weight: 700; text-align: center; color: var(--on-felt); }
 .back-link {
   display: inline-flex;
   align-items: center;
   min-height: var(--tap);
   text-decoration: none;
-  color: var(--ink-soft);
+  color: var(--on-felt-soft);
   font-weight: 600;
 }
 
@@ -123,14 +126,26 @@ a { color: inherit; }
 
 /* ---------- Home ---------- */
 .home { text-align: center; padding-top: 12vh; }
-.home-suits { font-size: 2rem; letter-spacing: 0.4rem; margin-bottom: 0.5rem; }
-.home h1 { font-family: var(--font-display); font-size: 2.6rem; line-height: 1.1; }
-.home .tagline { color: var(--ink-soft); margin: 0.6rem 0 2rem; }
+/* White card behind the suit symbols so all four colours read on the felt.
+   The extra left padding balances the trailing letter-spacing. */
+.home-suits {
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 1.2;
+  letter-spacing: 0.4rem;
+  margin-bottom: 0.75rem;
+  padding: 0.3rem 0.6rem 0.3rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.home h1 { font-family: var(--font-display); font-size: 2.6rem; line-height: 1.1; color: var(--on-felt); }
+.home .tagline { color: var(--on-felt-soft); margin: 0.6rem 0 2rem; }
 .hint { text-align: left; background: var(--brass-soft); border-color: var(--brass); margin-top: 1.5rem; font-size: 0.92rem; }
 .hint button { margin-top: 0.5rem; background: none; border: 0; font: inherit; font-weight: 700; text-decoration: underline; padding: 0.5rem 0; cursor: pointer; }
 
 /* ---------- Level cards and lesson list ---------- */
-.page-title { font-family: var(--font-display); font-size: 1.7rem; margin: 0.25rem 0 0.75rem; }
+.page-title { font-family: var(--font-display); font-size: 1.7rem; margin: 0.25rem 0 0.75rem; color: var(--on-felt); }
 .level-card { display: block; text-decoration: none; }
 .level-card .level-num { font-size: 0.85rem; font-weight: 700; color: var(--brass); }
 .level-card .level-name { font-family: var(--font-display); font-size: 1.35rem; margin: 0.1rem 0; }
@@ -241,7 +256,7 @@ a { color: inherit; }
 .toast button { background: none; border: 0; color: #f3e9d2; font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer; padding: 0.3rem; }
 
 .error-box { text-align: center; padding-top: 4rem; }
-.error-box p { margin: 0.6rem 0 1.2rem; color: var(--ink-soft); }
+.error-box p { margin: 0.6rem 0 1.2rem; color: var(--on-felt-soft); }
 
 /* ---------- Larger screens: just give the bidding box more room ---------- */
 @media (min-width: 480px) {
